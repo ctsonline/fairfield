@@ -23,12 +23,19 @@ view: fcc {
     sql: DATEADD(hour,-8,${reading_raw}) ;;
   }
 
-
   dimension: v1 {
     label: "Value"
     type: number
     sql: ${TABLE}.v1 ;;
   }
+
+  dimension: n1 {
+    label: "Name"
+    type: string
+    sql: ${TABLE}.v1 ;;
+  }
+
+
 
 
   measure: average_value {
