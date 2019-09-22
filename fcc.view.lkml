@@ -29,12 +29,39 @@ view: fcc {
     sql: ${TABLE}.v1 ;;
   }
 
-  dimension: n1 {
+  dimension: name {
     label: "Name"
+    hidden: yes
     type: string
-    sql: ${TABLE}.v1 ;;
+    sql: ${TABLE}.name ;;
   }
 
+  dimension: long_name {
+    label: "Long Name"
+    type: string
+    sql: ${TABLE}.name ;;
+  }
+
+  dimension: area {
+    type: string
+    sql: split_part(${name}, '.', 2) ;;
+  }
+
+  dimension: device {
+    type: string
+    sql: split_part(${name}, '.', 3) ;;
+  }
+
+  dimension:  application {
+    type: string
+    sql: split_part(${name}, '.', 5) ;;
+  }
+
+  dimension:  location {
+    label: "Asset Location"
+    type: string
+    sql: split_part(${name}, '.',4 ) ;;
+  }
 
 
 
