@@ -1,6 +1,6 @@
 view: fcc {
  view_label: "Bosnjak"
-  sql_table_name: public.ctsfieldmousedata ;;
+  sql_table_name: fcc_bosnjak ;;
 
   dimension_group: reading {
     type: time
